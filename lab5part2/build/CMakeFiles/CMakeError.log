@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3873746752/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3873746752.dir/build.make CMakeFiles/cmTryCompileExec3873746752.dir/build
+make[1]: Entering directory `/home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3873746752.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3873746752.dir/CheckSymbolExists.c.o   -c /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3873746752
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3873746752.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3873746752.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3873746752 -rdynamic 
+CMakeFiles/cmTryCompileExec3873746752.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3873746752] Error 1
+make[1]: Leaving directory `/home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3873746752/fast] Error 2
+
+File /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1155112264/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1155112264.dir/build.make CMakeFiles/cmTryCompileExec1155112264.dir/build
+make[1]: Entering directory `/home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1155112264.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1155112264.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1155112264
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1155112264.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1155112264.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1155112264 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1155112264] Error 1
+make[1]: Leaving directory `/home/group3/Dropbox/grad_classes/Spring_2014/BE107/lab5/lab5part2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1155112264/fast] Error 2
+
+
